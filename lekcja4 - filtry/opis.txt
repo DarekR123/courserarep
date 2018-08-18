@@ -1,0 +1,39 @@
+1. deklarujemy factory function poza obszarem kontrolera. Nazwa jest dowolna.
+Funkcja zwraca funkcję, której parametry po obróbce są zwracane np.
+
+function FilterFactoryFun(){           //(1) deklaracja funkcji typu factory
+  return function(tresc,par1,par2){    //poza kontrolerem,
+
+    return tresc.replace(par1,par2);   //która zwraca funkcje :-)
+  }
+}
+
+2. rejestrujemy filtr w module tak jak kontroler czyli:
+
+angular.module('myApp',[])
+.controller('myContr', myContrFun)
+
+.filter('myCustomF', FilterFactoryFun);
+
+nazwa filtra to myCustomF !!!
+
+3. Wstrzykujemy i dodajemy jako parametr do funkcji kontrolera
+
+myContrFun.inject = ['$scope', 'myCustomFFilter']; //(3) wstrzyknięcie
+function myContrFun($scope, myCustomFFilter){
+
+Ważne, na końcu nazwy trzeba dodać słowo Filter.
+
+4. Użycie
+
+w javascripcie np:
+
+$scope.message3 = myCustomFFilter($scope.message2, 'dd', 'DD')
+
+Ważne - w nazwie jest też Filter
+
+w html:
+
+{{message2 | myCustomF : 'aa' : 'bb'}}
+
+Ważne - bez słowa Filter
