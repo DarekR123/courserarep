@@ -1,0 +1,2 @@
+trzy rodzaje deklarowania modułu i kontrolera.
+Preferowana jest pierwsza wersja.
