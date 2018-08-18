@@ -1,0 +1,1 @@
+wersja podstawowa kontrolera + użycie filtra w htmlu
