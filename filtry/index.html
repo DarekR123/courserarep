@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  
+	<meta charset="UTF-8">
+	<title>Filtry i KOntroller as a syntax</title>
+</head>
+<body>
+  
+  <div ng-controller = "firstController as fCon">
+		<li>{{fCon.name}}</li>
+  	{{fCon.newname}} <br>
+  	{{fCon.name | myF : "k" : "T"}}
+	
+	
+		<div ng-controller = "secondController as sCon">
+
+			{{sCon.name}} <br>
+			{{fCon.name}}  <!-- zadziała tylko w zagnieżdż kontrolerze-->
+
+		</div>
+		
+	</div>
+	
+</body>
+</html>
