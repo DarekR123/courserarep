@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Serwisy</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="firstController as fContr">
+		{{fContr.myname}} <br>
+		<input type=text ng-model="fContr.name">
+		<input type="text" ng-model="fContr.quantity">
+		<button ng-click="fContr.addButton()">Dodaj</button>
+		<div>
+
+			<div ng-controller="listController as lContr">
+				<li ng-repeat="pos in lContr.litems">
+					{{pos.name}} of {{pos.quantity}}
+					<button ng-click="lContr.delButton($index)">skasuj</button>
+				</li>
+
+			</div>
+
+</body>
+
+</html>
