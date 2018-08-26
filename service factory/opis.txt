@@ -1,0 +1,3 @@
+service factory pozwala na tworzenie serwisów. Serwis można
+zadeklarować z parametrami i tworzyć go jako skonfigurowany
+Sewisy nie dzielą się danymi między sobą. 
